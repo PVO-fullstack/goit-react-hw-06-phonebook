@@ -14,8 +14,6 @@ export const ContactList = () => {
     contact.name.toLowerCase().includes(normalaizeFilter)
   );
 
-  console.log(visibleContacts);
-
   return (
     <Ul>
       {visibleContacts.map(contact => {
