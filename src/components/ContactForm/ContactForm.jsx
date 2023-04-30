@@ -4,10 +4,11 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Label, Form, Input, Button } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contactsSlice';
+import { getContactsList } from 'redux/selectors';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
+  const contacts = useSelector(getContactsList);
   const contactsName = contacts.map(contact => contact.name);
 
   const handleSubmit = e => {
